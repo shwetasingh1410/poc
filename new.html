@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width" />
+		<title text="">HSBC net MM</title>
+		
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css" />
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+		<style>
+.breadcrumb {
+    padding: 0px;
+    background: transparent;
+    list-style: none;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.breadcrumb>li {
+    display: table-cell;
+    vertical-align: top;
+    width: 1%;
+}
+
+.breadcrumb>li+li:before {
+    padding: 0;
+}
+
+.breadcrumb li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 0 10px 45px;
+    position: relative;
+    display: inline-block;
+    width: calc( 100% - 10px );
+    background-color: hsla(0, 0%, 83%, 1);
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.breadcrumb li.completed a {
+    background: brown;
+    background: hsla(153, 57%, 51%, 1);
+}
+
+.breadcrumb li.completed a:after {
+    border-left: 30px solid hsla(153, 57%, 51%, 1);
+}
+
+.breadcrumb li.active a {
+    background: #008580;
+}
+
+.breadcrumb li.active a:after {
+    border-left: 30px solid #008580;
+}
+
+.breadcrumb li:first-child a {
+    padding-left: 15px;
+}
+
+.breadcrumb li:last-of-type a {
+    width: calc( 100% - 38px );
+}
+
+.breadcrumb li a:before {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 30px solid white;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    margin-left: 1px;
+    left: 100%;
+    z-index: 1;
+}
+
+.breadcrumb li a:after {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 30px solid hsla(0, 0%, 83%, 1);
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    left: 100%;
+    z-index: 2;
+}
+
+
+.help-tip{
+	position: absolute;
+	top: 18px;
+	right: 18px;
+	text-align: center;
+	background-color: black;
+	border-radius: 50%;
+	width: 24px;
+	height: 24px;
+	font-size: 14px;
+	line-height: 26px;
+	cursor: default;
+}
+
+.help-tip:before{
+	content:'?';
+	font-weight: bold;
+	color:#fff;
+}
+
+.help-tip:hover p{
+	display:block;
+	transform-origin: 100% 0%;
+
+	-webkit-animation: fadeIn 0.3s ease-in-out;
+	animation: fadeIn 0.3s ease-in-out;
+
+}
+
+.help-tip p{	/* The tooltip */
+	display: none;
+	text-align: left;
+	background-color: #1E2021;
+	padding: 20px;
+	width: 300px;
+	position: absolute;
+	border-radius: 3px;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+	right: -4px;
+	color: #FFF;
+	font-size: 13px;
+	line-height: 1.4;
+}
+
+.help-tip p:before{ /* The pointer of the tooltip */
+	position: absolute;
+	content: '';
+	width:0;
+	height: 0;
+	border:6px solid transparent;
+	border-bottom-color:#1E2021;
+	right:10px;
+	top:-12px;
+}
+
+.help-tip p:after{ /* Prevents the tooltip from being hidden */
+	width:100%;
+	height:40px;
+	content:'';
+	position: absolute;
+	top:-40px;
+	left:0;
+}
+
+/* CSS animation */
+
+@-webkit-keyframes fadeIn {
+	0% { 
+		opacity:0; 
+		transform: scale(0.6);
+	}
+
+	100% {
+		opacity:100%;
+		transform: scale(1);
+	}
+}
+
+@keyframes fadeIn {
+	0% { opacity:0; }
+	100% { opacity:100%; }
+}
+.con-border{
+  border:1px solid;
+  border-color : grey;
+}
+</style>
+<body>
+<div class="container">
+	<div class="row">
+		<ul class="breadcrumb">
+    			<li class="active"><a href="javascript:void(0);">1. Transfer Details</a></li>
+			<li><a href="javascript:void(0);">2. Verify</a></li>
+			<li><a href="javascript:void(0);">3. Confirmation</a></li>
+		</ul>
+	</div>
+</div>
+<br/>
+<form class="form-horizontal">
+<fieldset>
+<!-- Text input-->
+<div class ="container con-border">
+<br/>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="buttondropdown">* Pay from</label>
+  <div class="col-md-4">
+    <div class="input-group">
+      
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-default dropdown-toggle fa fa-angle-down" data-toggle="dropdown">
+          PHILIPHINESS HBAC
+        </button>
+        
+      </div>
+	
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="buttondropdown">* Pay to</label>
+  <div class="col-md-4">
+    <div class="input-group">
+      
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-default dropdown-toggle fa fa-angle-down" data-toggle="dropdown">
+         <a href="#" class="btn btn-lg btn-default"><span class="flag icon flag-icon-ca"></span> CANADA HBAC</a>
+        </button>
+        
+      </div>
+	
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">* Beneficiary Address </label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="Address line 1" class="form-control input-md" required="">
+  </div>
+  
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="add 2"></label>  
+  <div class="col-md-4">
+  <input id="add 2" name="add 2" type="text" placeholder="Address line 2" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput"></label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="Country or territory" class="form-control input-md">
+    
+  </div>
+</div>
+</div>
+</br>
+<!-- Button Drop Down -->
+<div class ="container con-border">
+<br/>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="buttondropdown">* Amount</label>
+  <div class="col-md-4">
+    <div class="input-group">
+      
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-default dropdown-toggle fa fa-angle-down" data-toggle="dropdown">
+          AUD
+        </button>
+        <ul class="dropdown-menu pull-right">
+          <li><a href="#">Option one</a></li>
+          <li><a href="#">Option two</a></li>
+          <li><a href="#">Option three</a></li>
+        </ul>
+      </div>
+	  <input id="buttondropdown" name="buttondropdown" class="form-control" placeholder="" type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Multiple Radios (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="radios">Send this transfer</label>
+  <div class="col-md-8"> 
+    <label class="radio-inline" for="radios-0">
+      <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
+      As soon as possible
+    </label> 
+    <label class="radio-inline" for="radios-1">
+      <input type="radio" name="radios" id="radios-1" value="2">
+      On a specific date
+    </label> 
+    <label class="radio-inline" for="radios-2">
+      <input type="radio" name="radios" id="radios-2" value="3">
+      At regular intervals
+    </label>
+	<div class="help-tip">
+	<p>This is the inline help tip! It can contain all kinds of HTML. Style it as you please.</p>
+</div>
+  </div>
+  
+</div>
+
+<!-- -->
+
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectbasic">* Charges</label>
+  <div class="col-md-4">
+    <select id="selectbasic" name="selectbasic" class="form-control">
+      <option value="1">Share</option>
+      <option value="2">Single</option>
+    </select>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">* Your reference</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
+    
+  </div>
+</div>
+</div>
+<br/>
+<div class ="container con-border">
+<br/>
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textarea">Transfer Information</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="textarea" name="textarea"></textarea>
+  </div>
+</div>
+</div>
+</fieldset>
+</form>
+
+</body>
+</html>
